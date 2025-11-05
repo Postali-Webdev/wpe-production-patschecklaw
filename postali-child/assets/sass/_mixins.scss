@@ -1,0 +1,55 @@
+/**
+ * Theme footer
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+@mixin respond($breakpoint) {
+    @if ($breakpoint==$screen-xxxl) {
+        @media screen and (min-width:$screen-xxxl) { @content }
+    }
+
+    @if ($breakpoint==$screen-xl) {
+        @media screen and (max-width:$screen-xl) { @content }
+    }
+
+    @if ($breakpoint==screen-lg) {
+        @media screen and (max-width:$screen-lg) { @content }
+    }
+
+    @if ($breakpoint==screen-lg-md) {
+        @media screen and (max-width:$screen-lg-md) { @content }
+    }
+
+    @if ($breakpoint==screen-sm) {
+        @media screen and (max-width:$screen-sm) { @content }
+    }
+
+    @if ($breakpoint==screen-xs) {
+        @media screen and (max-width:$screen-xs) { @content }
+    }
+    
+    @if ($breakpoint==screen-xxs) {
+        @media screen and (max-width:$screen-xxs) { @content }
+    }
+
+    @if ($breakpoint==screen-xxxs) {
+        @media screen and (max-width:$screen-xxxs) { @content }
+    }
+}
+
+@mixin red-orange-gradient {
+    background: linear-gradient(90deg, rgba(190,37,13,1) 0%, rgba(232,89,62,1) 50%, rgba(255,185,54,1) 100%);
+}
+
+@mixin separator {
+    .separator {
+        width: 100%;
+        display: block;
+        height: 5px;
+        margin: 30px 0;
+        
+        @include red-orange-gradient;
+    }
+}

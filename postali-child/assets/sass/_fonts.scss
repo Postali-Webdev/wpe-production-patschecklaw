@@ -1,0 +1,521 @@
+    /**
+    * Web Font Styles, H Styles, Body Text Styles
+    *
+    * @package Postali Child
+    * @author Postali LLC
+    **/
+
+    //Current Font Basis
+    // html { @include fluid-type($min_width, $max_width, $min_font, $max_font); }
+    // html { @include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont);}
+    // body { padding: 1em; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}
+
+    ///// NOTES - QA / CLEAN UP / COMPLETE /////
+
+    /* Core Settings */
+    html {
+    height: 100%;
+    }
+    body {
+    font-size: 16px;
+    min-width: 320px;
+    margin: 0 auto;
+    }
+
+    // Font Imports
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+    // Fonts // - QA
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    ul {
+    font-family: $poppins;
+    font-weight: $normal;
+    color: $body-text-color;
+    }
+    p,
+    a,
+    ul,
+    ol,
+    ul li,
+    ol li {
+    font-family: $poppins;
+    font-size: 16px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+    display: table;
+    font-family: $poppins;
+    font-weight: $normal;
+    line-height: 1.1;
+    }
+
+    // Header & Navigation  // QA - Clean Up - Complete
+    ul#menu-primary-navigation {
+    li {
+        @media screen and (max-width: $screen-md) {
+        border-bottom: 1px solid white;
+        padding-left: 25px;
+        padding-right: 25px;
+        }
+
+        a {
+        font-size: 19px;
+        font-weight: $normal;
+        color: $blk;
+
+        @media screen and (max-width: $screen-md) {
+            color: $white;
+            font-size: 28px;
+            font-weight: $normal;
+            line-height: 36px;
+        }
+        }
+        &:hover a {
+        //            font-size: 24px;
+        color: $orange;
+        border-bottom: 2px solid $orange;
+        border-width: 4px;
+        padding-bottom: 10px;
+
+        @media screen and (max-width: $screen-md) {
+            color: $white;
+            border-bottom: 0;
+            border-width: 0;
+        }
+        }
+
+        &:first-child {
+        @media screen and (max-width: $screen-md) {
+            border-bottom: 1px solid white;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        a {
+            //              font-size: 20px;
+            //                line-height: 36px;
+            //                border: 0;
+
+            @media screen and (max-width: $screen-md) {
+            //                    font-size: 28px;
+            //                  font-weight: $normal;
+            }
+        }
+        }
+
+        &:nth-child(3) {
+        @media screen and (max-width: $screen-md) {
+            // border-bottom: 0px;
+        }
+        a {
+            font-size: 19px;
+            color: $white;
+            border: 0;
+            @media screen and (max-width: $screen-lg) {
+            font-size: 16px;
+            }
+
+            @media screen and (max-width: $screen-md) {
+            font-size: 16px;
+            text-transform: capitalize;
+            }
+        }
+        }
+
+        .sub-menu {
+        li {
+            line-height: 140% !important;
+            a {
+            color: $white;
+            font-family: $arbutus;
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 140%;
+            text-transform: none;
+            margin-bottom: 0;
+            &:hover {
+                color: $white;
+            }
+
+            // color: $blk;//
+
+            &:hover {
+                color: $blk;
+            }
+            }
+            //&:hover {color:$blk;}//
+            &:hover > a {
+            color: $blk;
+            }
+
+            &.current-menu-item > a {
+            color: $blk;
+            }
+            &.current-menu-item:hover > a {
+            color: $white;
+            }
+        }
+        }
+    }
+    }
+
+    // Breadcrumbs // not Frontpage
+    .breadcrumb {
+    #tsh_breadcrumbs {
+        text-align: left;
+        list-style: none;
+    }
+
+    .tsh_breadcrumbs li {
+        font-size: calc(13px + (15 - 13) * ((100vw - 360px) / (1920 - 360)));
+        font-family: $arbutus;
+        color: $grey;
+
+        a {
+        font-size: calc(13px + (15 - 13) * ((100vw - 360px) / (1920 - 360)));
+        font-family: $arbutus;
+        color: $orange;
+        }
+    }
+    }
+
+    // Default Header // - QA - Clean Up - Complete
+    section#hero.default {
+    .header-top {
+        .content {
+        h1 {
+            color: $white;
+            font-family: $poppins;
+            font-weight: $light;
+            text-transform: none;
+
+            @media screen and (min-width: $screen-xxl) {
+            // font-size: 42px;
+            line-height: 54px;
+            } // Over 1660
+
+            @media screen and (max-width: $screen-xxs) {
+            font-size: 28px;
+            line-height: 34px;
+            } // Under xxs 480
+
+            strong {
+            font-weight: $semibold;
+
+            @media screen and (min-width: $screen-xxl) {
+                font-size: 40px;
+            } // Over 1660
+            @media screen and (max-width: $screen-xl) {
+                //   font-size: 28px;
+                line-height: 34px;
+                font-weight: $normal;
+            }
+
+            @media screen and (max-width: $screen-xxs) {
+                font-size: 28px;
+                line-height: 34px;
+            } // Under xxs 480
+            }
+        }
+
+        /* p {
+                    font-size: calc(20px + (22 - 20) * ((100vw - 360px) / (1920 - 360)));
+                } */
+        }
+        .btn-wrapper {
+        .btn-content {
+            font-size: 19px;
+            color: $white;
+            line-height: 28px;
+        }
+        }
+    }
+    .header-bottom {
+        p {
+        color: $blk;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+
+        @media screen and (max-width: $screen-xxs) {
+            font-size: 20px;
+        }
+        strong {
+            @media screen and (max-width: $screen-xxs) {
+            font-size: 20px;
+            }
+        }
+        }
+    }
+    }
+    // Contact Form // - QA - Complete
+    figure#contact-form {
+    .wrapper {
+        div.wpcf7 {
+        .wpcf7-text {
+            color: $blk;
+            font-family: $poppins;
+            font-size: 16px;
+        }
+        .wpcf7-textarea {
+            color: $blk;
+            font-family: $poppins;
+            font-size: 16px;
+        }
+        }
+    }
+
+    ::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: #1f1c1e !important;
+        font-style: italic;
+        opacity: 1;
+    }
+    :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #1f1c1e !important;
+        font-style: italic;
+        opacity: 1;
+    }
+    ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #1f1c1e !important;
+        font-style: italic;
+        opacity: 1;
+    }
+    :-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: #1f1c1e !important;
+        font-style: italic;
+        opacity: 1;
+    }
+    }
+
+    // After Header // - QA - Clean Up - Complete
+    #after-header h2 {
+    font-size: 32px;
+    }
+
+    // default - Fonts and Styles // - QA - QA - Clean Up - Complete
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    a {
+        text-decoration: none;
+        transition: $trans;
+        &:hover {
+            color: $orange;
+            text-decoration: underline;
+        }
+    }
+
+    b,
+    strong {
+        font-weight: 600;
+    }
+
+    /// Page Fonts /// - QA - Clean-up - Compile - Complete
+    p {
+        font-size: 16px;
+        color: $blk;
+        line-height: 30px;
+    }
+
+    // Frontpage - Practice-Areas Section // - QA
+    section#practice-areas .wrapper .content {
+    h2 {
+        font-family: $poppins;
+        font-weight: $normal;
+        font-size: 32px;
+        text-align: center;
+        color: #000;
+    }
+    h4 {
+        font-family: $poppins;
+        font-weight: $bold;
+        font-size: 20px;
+        color: #000;
+        line-height: 1.5;
+    }
+
+    .content {
+        .pa {
+            p {
+                font-size: 20px;
+            }
+            a {
+                font-size: inherit;
+            }
+            }
+        }
+    }
+    // Frontpage - About Section // - QA
+    section#hero.about-home .header-top .wrapper .content {
+    h2 {
+        line-height: 36px;
+        padding-bottom: 14px;
+        @media screen and (min-width: $screen-sm) {
+        font-size: 34px;
+        }
+    }
+    p {
+        color: $blk;
+        font-size: 18px;
+        font-weight: $normal;
+        line-height: 30px;
+
+        &:nth-of-type(1) {
+        font-size: 20px;
+        font-weight: $bold;
+        }
+    }
+    ul {
+        padding-bottom: 72px;
+        margin-bottom: 0;
+    }
+    li {
+        font-size: 18px;
+        font-weight: $normal;
+        line-height: 30px;
+        padding-bottom: 30px;
+
+        &:last-of-type {
+        padding-bottom: 0;
+        }
+    }
+    }
+    // About Page // - QA
+    section#about-pa {
+    #practice-areas {
+        color: $white;
+        .pa-1 {
+        p {
+            color: $white;
+            font-size: 36px;
+        }
+        }
+        .pa-bg {
+        button {
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        }
+    }
+    }
+
+    // Default Content Pages - Complete // need icon for Phone
+    #content {
+    .content {
+        h2 {
+        line-height: 40px;
+        }
+
+        h3 {
+        font-size: 28px;
+        }
+        &.odd {
+        background-color: $grey;
+        h3 {
+            font-size: 28px;
+            background-color: $white;
+        }
+        }
+        &.even {
+        background-color: $white;
+        h3 {
+            background-color: $grey;
+        }
+        }
+        .wrapper {
+        .container {
+            h3 {
+            font-size: 25px;
+            line-height: 100%;
+            padding: 10px;
+            margin-left: -15px;
+            margin: 0 0 30px -15px;
+
+            @media screen and (max-width: $screen-xs) {
+                line-height: 30px;
+            }
+
+            @media screen and (max-width: $screen-xxs) {
+                line-height: 40px;
+            }
+            }
+            h4 {
+            font-size: 22px;
+            line-height: 30px;
+            color: $orange;
+            font-weight: $semibold;
+
+            @media screen and (max-width: $screen-xxs) {
+                color: $blk;
+            }
+            }
+            p {
+            font-size: 16px;
+            line-height: 30px;
+            }
+            ul {
+            padding-bottom: 30px;
+            margin: 0 0 0 20px;
+            list-style-position: outside;
+            li {
+                font-size: 16px;
+                line-height: 0;
+                line-height: 30px;
+                padding: 0 0 4px 0;
+            }
+            }
+        }
+        }
+    }
+    }
+
+    // Default Before Footer // - QA
+    section#before-footer {
+    p {
+        color: $white;
+        padding: 0;
+    }
+
+    .left-column {
+        p:nth-of-type(1) {
+        line-height: 1.25;
+        padding: 0;
+        }
+    }
+    p:nth-of-type(2) {
+        font-weight: 600;
+        line-height: 1.3;
+        padding: 0;
+    }
+    }
+
+    // Above Footer > _footer.scss
+    // Footer > _footer.scss
